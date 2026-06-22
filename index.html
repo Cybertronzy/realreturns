@@ -795,21 +795,13 @@ function get(id) { return parseFloat(document.getElementById(id).value) || 0; }
 function set(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
 
 function syncRange(inputId, rangeId, min, max) {
+  // Called when NUMBER INPUT changes — syncs the range slider to match
   const val = parseFloat(document.getElementById(inputId).value);
   const r = document.getElementById(rangeId);
   if (r && !isNaN(val)) {
     r.value = Math.min(Math.max(val, min), max);
     const pct = ((r.value - r.min) / (r.max - r.min)) * 100;
     r.style.setProperty('--pct', pct + '%');
-  }
-  // also update from range
-  const r2 = document.getElementById(rangeId);
-  if (r2) {
-    r2.oninput = function() {
-      document.getElementById(inputId).value = this.value;
-      const pct = ((this.value - this.min) / (this.max - this.min)) * 100;
-      this.style.setProperty('--pct', pct + '%');
-    }
   }
 }
 
@@ -827,14 +819,27 @@ function switchTab(name, btn) {
   if (name === 'compare') calcCompare();
 }
 
-// initialise range fills
+// initialise range fills + wire slider → number input sync
 function initRanges() {
   document.querySelectorAll('input[type="range"]').forEach(r => {
+    // Set initial fill colour
     const pct = ((r.value - r.min) / (r.max - r.min)) * 100;
     r.style.setProperty('--pct', pct + '%');
+
+    // Find the paired number input (range id = numberInputId + '-r')
+    const numberId = r.id.replace(/-r$/, '');
+    const numInput = document.getElementById(numberId);
+
     r.addEventListener('input', function() {
+      // Update fill
       const p = ((this.value - this.min) / (this.max - this.min)) * 100;
       this.style.setProperty('--pct', p + '%');
+      // Sync number input
+      if (numInput) numInput.value = this.value;
+      // Trigger the right calculator
+      if (this.id.startsWith('sip-')) calcSIP();
+      else if (this.id.startsWith('emi-')) calcEMI();
+      else if (this.id.startsWith('cmp-')) calcCompare();
     });
   });
 }
@@ -914,11 +919,7 @@ function calcSIP() {
   const inf  = get('sip-inflation') / 100;
   const ltcgOn = document.getElementById('sip-ltcg-toggle').classList.contains('on');
 
-  // sync sliders
-  ['sip-amount','sip-rate','sip-years','sip-stepup','sip-expense','sip-inflation'].forEach(id => {
-    const r = document.getElementById(id + '-r');
-    if (r) { r.value = document.getElementById(id).value; const pct = ((r.value - r.min)/(r.max - r.min))*100; r.style.setProperty('--pct', pct+'%'); }
-  });
+  // sliders synced via initRanges()
 
   let totalInvested = 0, corpus = 0;
   let P = P0;
@@ -982,10 +983,7 @@ function calcEMI() {
   const extra = get('emi-extra');
   const fee   = get('emi-fee') / 100;
 
-  ['emi-amount','emi-rate','emi-years','emi-extra'].forEach(id => {
-    const r = document.getElementById(id + '-r');
-    if (r) { r.value = document.getElementById(id).value; const pct = ((r.value - r.min)/(r.max - r.min))*100; r.style.setProperty('--pct', pct+'%'); }
-  });
+  // sliders synced via initRanges()
 
   if (rMon === 0) return;
   const emi = P * rMon * Math.pow(1 + rMon, nMon) / (Math.pow(1 + rMon, nMon) - 1);
