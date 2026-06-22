@@ -527,8 +527,8 @@ footer strong { color: #94A3B8; }
           <div class="field-row"><input type="number" id="sip-inflation" value="6" min="0" max="15" step="0.5" oninput="calcSIP()"><span class="field-suffix">%</span></div>
           <div class="range-wrap"><input type="range" id="sip-inflation-r" min="0" max="15" step="0.5" value="6" oninput="syncRange('sip-inflation','sip-inflation-r',0,15); calcSIP()"><div class="range-labels"><span>0%</span><span>15%</span></div></div>
         </div>
-        <label class="toggle-row" id="sip-ltcg-toggle" onclick="toggleClass(this,'on'); calcSIP()">
-          <input type="checkbox" id="sip-ltcg" checked>
+        <label class="toggle-row on" id="sip-ltcg-toggle" for="sip-ltcg">
+          <input type="checkbox" id="sip-ltcg" checked onchange="document.getElementById('sip-ltcg-toggle').classList.toggle('on',this.checked); calcSIP()">
           <span class="toggle-switch"></span>
           <span class="toggle-label">Include LTCG Tax (12.5% on gains above ₹1.25L/yr)</span>
         </label>
@@ -1139,7 +1139,7 @@ function downloadPDF(type) {
 // ── INIT ──────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initRanges();
-  document.getElementById('sip-ltcg-toggle').classList.add('on');
+  // LTCG toggle initialised in HTML
   calcSIP();
   calcEMI();
   calcCompare();
