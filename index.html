@@ -493,17 +493,17 @@ footer strong { color: #94A3B8; }
         <div class="field">
           <label>Monthly SIP Amount</label>
           <div class="field-row"><span class="field-prefix">₹</span><input type="number" id="sip-amount" value="10000" min="500" max="1000000" oninput="calcSIP()"></div>
-          <div class="range-wrap"><input type="range" id="sip-amount-r" min="500" max="100000" step="500" value="10000" oninput="syncRange('sip-amount','sip-amount-r',500,100000); calcSIP()"><div class="range-labels"><span>₹500</span><span>₹1L</span></div></div>
+          <div class="range-wrap"><input type="range" id="sip-amount-r" min="500" max="100000" step="500" value="10000"><div class="range-labels"><span>₹500</span><span>₹1L</span></div></div>
         </div>
         <div class="field">
           <label>Expected Annual Return (%)</label>
           <div class="field-row"><input type="number" id="sip-rate" value="12" min="1" max="30" step="0.5" oninput="calcSIP()"><span class="field-suffix">%</span></div>
-          <div class="range-wrap"><input type="range" id="sip-rate-r" min="1" max="30" step="0.5" value="12" oninput="syncRange('sip-rate','sip-rate-r',1,30); calcSIP()"><div class="range-labels"><span>1%</span><span>30%</span></div></div>
+          <div class="range-wrap"><input type="range" id="sip-rate-r" min="1" max="30" step="0.5" value="12"><div class="range-labels"><span>1%</span><span>30%</span></div></div>
         </div>
         <div class="field">
           <label>Investment Period (Years)</label>
           <div class="field-row"><input type="number" id="sip-years" value="15" min="1" max="40" oninput="calcSIP()"><span class="field-suffix">Yrs</span></div>
-          <div class="range-wrap"><input type="range" id="sip-years-r" min="1" max="40" value="15" oninput="syncRange('sip-years','sip-years-r',1,40); calcSIP()"><div class="range-labels"><span>1 yr</span><span>40 yrs</span></div></div>
+          <div class="range-wrap"><input type="range" id="sip-years-r" min="1" max="40" value="15"><div class="range-labels"><span>1 yr</span><span>40 yrs</span></div></div>
         </div>
       </div>
     </div>
@@ -515,17 +515,17 @@ footer strong { color: #94A3B8; }
         <div class="field">
           <label>Annual Step-Up (% increase each year)</label>
           <div class="field-row"><input type="number" id="sip-stepup" value="0" min="0" max="30" step="1" oninput="calcSIP()"><span class="field-suffix">%</span></div>
-          <div class="range-wrap"><input type="range" id="sip-stepup-r" min="0" max="30" value="0" oninput="syncRange('sip-stepup','sip-stepup-r',0,30); calcSIP()"><div class="range-labels"><span>0%</span><span>30%</span></div></div>
+          <div class="range-wrap"><input type="range" id="sip-stepup-r" min="0" max="30" value="0"><div class="range-labels"><span>0%</span><span>30%</span></div></div>
         </div>
         <div class="field">
           <label>Expense Ratio (%/yr)</label>
           <div class="field-row"><input type="number" id="sip-expense" value="0.5" min="0" max="3" step="0.1" oninput="calcSIP()"><span class="field-suffix">%</span></div>
-          <div class="range-wrap"><input type="range" id="sip-expense-r" min="0" max="3" step="0.1" value="0.5" oninput="syncRange('sip-expense','sip-expense-r',0,3); calcSIP()"><div class="range-labels"><span>0%</span><span>3%</span></div></div>
+          <div class="range-wrap"><input type="range" id="sip-expense-r" min="0" max="3" step="0.1" value="0.5"><div class="range-labels"><span>0%</span><span>3%</span></div></div>
         </div>
         <div class="field">
           <label>Inflation Rate (%/yr)</label>
           <div class="field-row"><input type="number" id="sip-inflation" value="6" min="0" max="15" step="0.5" oninput="calcSIP()"><span class="field-suffix">%</span></div>
-          <div class="range-wrap"><input type="range" id="sip-inflation-r" min="0" max="15" step="0.5" value="6" oninput="syncRange('sip-inflation','sip-inflation-r',0,15); calcSIP()"><div class="range-labels"><span>0%</span><span>15%</span></div></div>
+          <div class="range-wrap"><input type="range" id="sip-inflation-r" min="0" max="15" step="0.5" value="6"><div class="range-labels"><span>0%</span><span>15%</span></div></div>
         </div>
         <label class="toggle-row on" id="sip-ltcg-toggle" for="sip-ltcg">
           <input type="checkbox" id="sip-ltcg" checked onchange="document.getElementById('sip-ltcg-toggle').classList.toggle('on',this.checked); calcSIP()">
@@ -620,17 +620,17 @@ footer strong { color: #94A3B8; }
         <div class="field">
           <label>Loan Amount</label>
           <div class="field-row"><span class="field-prefix">₹</span><input type="number" id="emi-amount" value="3000000" min="10000" max="100000000" oninput="calcEMI()"></div>
-          <div class="range-wrap"><input type="range" id="emi-amount-r" min="100000" max="10000000" step="100000" value="3000000" oninput="syncRange('emi-amount','emi-amount-r',100000,10000000); calcEMI()"><div class="range-labels"><span>₹1L</span><span>₹1Cr</span></div></div>
+          <div class="range-wrap"><input type="range" id="emi-amount-r" min="100000" max="10000000" step="100000" value="3000000"><div class="range-labels"><span>₹1L</span><span>₹1Cr</span></div></div>
         </div>
         <div class="field">
           <label>Annual Interest Rate (%)</label>
           <div class="field-row"><input type="number" id="emi-rate" value="8.5" min="1" max="30" step="0.1" oninput="calcEMI()"><span class="field-suffix">%</span></div>
-          <div class="range-wrap"><input type="range" id="emi-rate-r" min="5" max="24" step="0.1" value="8.5" oninput="syncRange('emi-rate','emi-rate-r',5,24); calcEMI()"><div class="range-labels"><span>5%</span><span>24%</span></div></div>
+          <div class="range-wrap"><input type="range" id="emi-rate-r" min="5" max="24" step="0.1" value="8.5"><div class="range-labels"><span>5%</span><span>24%</span></div></div>
         </div>
         <div class="field">
           <label>Loan Tenure (Years)</label>
           <div class="field-row"><input type="number" id="emi-years" value="20" min="1" max="30" oninput="calcEMI()"><span class="field-suffix">Yrs</span></div>
-          <div class="range-wrap"><input type="range" id="emi-years-r" min="1" max="30" value="20" oninput="syncRange('emi-years','emi-years-r',1,30); calcEMI()"><div class="range-labels"><span>1 yr</span><span>30 yrs</span></div></div>
+          <div class="range-wrap"><input type="range" id="emi-years-r" min="1" max="30" value="20"><div class="range-labels"><span>1 yr</span><span>30 yrs</span></div></div>
         </div>
       </div>
     </div>
@@ -641,7 +641,7 @@ footer strong { color: #94A3B8; }
         <div class="field">
           <label>Extra Monthly Payment (₹)</label>
           <div class="field-row"><span class="field-prefix">₹</span><input type="number" id="emi-extra" value="0" min="0" oninput="calcEMI()"></div>
-          <div class="range-wrap"><input type="range" id="emi-extra-r" min="0" max="50000" step="1000" value="0" oninput="syncRange('emi-extra','emi-extra-r',0,50000); calcEMI()"><div class="range-labels"><span>₹0</span><span>₹50K</span></div></div>
+          <div class="range-wrap"><input type="range" id="emi-extra-r" min="0" max="50000" step="1000" value="0"><div class="range-labels"><span>₹0</span><span>₹50K</span></div></div>
         </div>
         <div class="field">
           <label>Processing Fee (%)</label>
@@ -800,9 +800,13 @@ function syncRange(inputId, rangeId, min, max) {
   const r = document.getElementById(rangeId);
   if (r && !isNaN(val)) {
     r.value = Math.min(Math.max(val, min), max);
-    const pct = ((r.value - r.min) / (r.max - r.min)) * 100;
-    r.style.setProperty('--pct', pct + '%');
+    updateFill(r);
   }
+}
+
+function updateFill(r) {
+  const pct = ((r.value - r.min) / (r.max - r.min)) * 100;
+  r.style.setProperty('--pct', pct + '%');
 }
 
 function toggleClass(el, cls) {
@@ -821,26 +825,30 @@ function switchTab(name, btn) {
 
 // initialise range fills + wire slider → number input sync
 function initRanges() {
-  document.querySelectorAll('input[type="range"]').forEach(r => {
-    // Set initial fill colour
-    const pct = ((r.value - r.min) / (r.max - r.min)) * 100;
-    r.style.setProperty('--pct', pct + '%');
+  document.querySelectorAll('input[type="range"]').forEach(function(r) {
+    // Set initial fill
+    updateFill(r);
 
-    // Find the paired number input (range id = numberInputId + '-r')
-    const numberId = r.id.replace(/-r$/, '');
-    const numInput = document.getElementById(numberId);
+    // Find paired number input: slider id is always numberId + '-r'
+    var numberId = r.id.slice(0, -2); // strip trailing '-r'
+    var numInput = document.getElementById(numberId);
 
+    // When slider moves: update fill, sync number box, recalculate
     r.addEventListener('input', function() {
-      // Update fill
-      const p = ((this.value - this.min) / (this.max - this.min)) * 100;
-      this.style.setProperty('--pct', p + '%');
-      // Sync number input
-      if (numInput) numInput.value = this.value;
-      // Trigger the right calculator
-      if (this.id.startsWith('sip-')) calcSIP();
-      else if (this.id.startsWith('emi-')) calcEMI();
-      else if (this.id.startsWith('cmp-')) calcCompare();
+      updateFill(r);
+      if (numInput) numInput.value = r.value;
+      if (r.id.indexOf('sip-') === 0) calcSIP();
+      else if (r.id.indexOf('emi-') === 0) calcEMI();
+      else if (r.id.indexOf('cmp-') === 0) calcCompare();
     });
+
+    // When number box changes: sync slider fill
+    if (numInput) {
+      numInput.addEventListener('input', function() {
+        r.value = numInput.value;
+        updateFill(r);
+      });
+    }
   });
 }
 
