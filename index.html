@@ -265,9 +265,9 @@ footer strong{color:#94A3B8}
   <div class="card" id="sip-results">
     <div class="card-title"><span class="ico ico-r">🎯</span> The Real Picture</div>
     <div class="trio">
-      <div class="pill nom"><div class="pill-lbl">📈 Nominal Corpus</div><div class="pill-val" id="s-nom">—</div><div class="pill-sub">Pre-tax, pre-inflation</div></div>
-      <div class="pill tax"><div class="pill-lbl">🏛️ After LTCG Tax</div><div class="pill-val" id="s-ptax">—</div><div class="pill-sub">Tax you'll likely owe</div></div>
-      <div class="pill real"><div class="pill-lbl">🧮 Real Value Today</div><div class="pill-val" id="s-real">—</div><div class="pill-sub">Inflation-adjusted</div></div>
+      <div class="pill nom"><div class="pill-lbl">📈 Nominal Corpus</div><div class="pill-val" id="s-nom">Calculating...</div><div class="pill-sub">Pre-tax, pre-inflation</div></div>
+      <div class="pill tax"><div class="pill-lbl">🏛️ After LTCG Tax</div><div class="pill-val" id="s-ptax">Calculating...</div><div class="pill-sub">Tax you'll likely owe</div></div>
+      <div class="pill real"><div class="pill-lbl">🧮 Real Value Today</div><div class="pill-val" id="s-real">Calculating...</div><div class="pill-sub">Inflation-adjusted</div></div>
     </div>
     <div class="stats">
       <div class="stat"><div class="stat-lbl">Total Invested</div><div class="stat-val" id="s-inv">—</div></div>
@@ -433,21 +433,21 @@ footer strong{color:#94A3B8}
 </footer>
 
 <script>
-// ── HELPERS ───────────────────────────────────────────────
+// -- HELPERS  --
 function v(id){ return parseFloat(document.getElementById(id).value)||0; }
 function el(id){ return document.getElementById(id); }
 function setText(id,txt){ var e=el(id); if(e) e.textContent=txt; }
 
 function fmt(n){
-  if(isNaN(n)||n===null) return '—';
+  if(isNaN(n)||n===null) return ' ';
   var a=Math.abs(n);
-  if(a>=1e7) return '₹'+(n/1e7).toFixed(2)+' Cr';
-  if(a>=1e5) return '₹'+(n/1e5).toFixed(2)+' L';
-  if(a>=1e3) return '₹'+(n/1e3).toFixed(1)+'K';
-  return '₹'+Math.round(n).toLocaleString('en-IN');
+  if(a>=1e7) return ' '+(n/1e7).toFixed(2)+' Cr';
+  if(a>=1e5) return ' '+(n/1e5).toFixed(2)+' L';
+  if(a>=1e3) return ' '+(n/1e3).toFixed(1)+'K';
+  return ' '+Math.round(n).toLocaleString('en-IN');
 }
 
-// ── SLIDER SETUP (clean, no conflicts) ───────────────────
+// -- SLIDER SETUP  --(clean, no conflicts)                    
 // Each slider pair: [rangeId, numberId, min, max, calcFn]
 var sliderPairs = [
   ['s-amt-r',  's-amt',   500,    100000,   calcSIP],
@@ -476,14 +476,14 @@ function initSliders(){
     // Set initial fill
     setFill(rng);
 
-    // Slider moved → update number box + fill + recalculate
+    // Slider moved   update number box + fill + recalculate
     rng.addEventListener('input', function(){
       num.value = rng.value;
       setFill(rng);
       calc();
     });
 
-    // Number typed → update slider + fill + recalculate
+    // Number typed   update slider + fill + recalculate
     num.addEventListener('input', function(){
       var val = parseFloat(num.value)||0;
       val = Math.min(Math.max(val, min), max);
@@ -494,7 +494,7 @@ function initSliders(){
   });
 }
 
-// ── LTCG TOGGLE ──────────────────────────────────────────
+// -- LTCG TOGGLE  --
 var ltcgOn = true;
 el('ltcg-wrap').addEventListener('click', function(){
   ltcgOn = !ltcgOn;
@@ -504,7 +504,7 @@ el('ltcg-wrap').addEventListener('click', function(){
   calcSIP();
 });
 
-// ── TAB SWITCHING ─────────────────────────────────────────
+// -- TAB SWITCHING  --
 document.querySelectorAll('.tab').forEach(function(btn){
   btn.addEventListener('click', function(){
     var panel = btn.getAttribute('data-panel');
@@ -516,7 +516,7 @@ document.querySelectorAll('.tab').forEach(function(btn){
   });
 });
 
-// ── CHART ─────────────────────────────────────────────────
+// -- CHART  --
 function drawChart(canvasId, labels, datasets, legend){
   var canvas = el(canvasId);
   if(!canvas) return;
@@ -579,7 +579,7 @@ function drawChart(canvasId, labels, datasets, legend){
   }
 }
 
-// ── SIP CALCULATOR ────────────────────────────────────────
+// -- SIP CALCULATOR  --
 function calcSIP(){
   var P0   = v('s-amt');
   var rGross = v('s-rate')/100;
@@ -619,7 +619,7 @@ function calcSIP(){
   setText('s-inv',  fmt(totalInvested));
   setText('s-gain', '+'+fmt(totalGain));
   setText('s-tax',  ltcgOn ? '-'+fmt(ltcgTax) : 'Off');
-  setText('s-mult', mult.toFixed(1)+'×');
+  setText('s-mult', mult.toFixed(1)+' ');
 
   // Table
   var tbody=el('sip-tbody');
@@ -637,7 +637,7 @@ function calcSIP(){
   );
 }
 
-// ── EMI CALCULATOR ────────────────────────────────────────
+// -- EMI CALCULATOR  --
 function calcEMI(){
   var P     = v('e-amt');
   var rMon  = v('e-rate')/100/12;
@@ -708,7 +708,7 @@ function calcEMI(){
   );
 }
 
-// ── COMPARE ───────────────────────────────────────────────
+// -- COMPARE  --
 function calcCmp(){
   var loan  = v('c-loan');
   var lRate = v('c-lrate')/100/12;
@@ -742,7 +742,7 @@ function calcCmp(){
   setText('c-isave',  fmt(Math.max(0,intSaved)));
   setText('c-tsave',  Math.floor(tSaved/12)+'y '+(tSaved%12)+'m');
 
-  var verdict=sipNet>intSaved?'📈 SIP Wins':'🏠 Prepay Wins';
+  var verdict=sipNet>intSaved?'  SIP Wins':'  Prepay Wins';
   var vEl=el('c-verdict');
   vEl.textContent=verdict;
   vEl.className='stat-val '+(sipNet>intSaved?'up':'dn');
@@ -751,7 +751,7 @@ function calcCmp(){
   var insightTxt=el('c-insight-txt');
   insightBox.style.display='flex';
   if(sipNet>intSaved){
-    insightTxt.innerHTML='<strong>SIP likely generates more wealth</strong> ('+fmt(sipNet)+' corpus vs '+fmt(Math.max(0,intSaved))+' interest saved). However, loan prepayment offers <em>guaranteed</em> savings — SIP returns are market-dependent. Consider a 50-50 split.';
+    insightTxt.innerHTML='<strong>SIP likely generates more wealth</strong> ('+fmt(sipNet)+' corpus vs '+fmt(Math.max(0,intSaved))+' interest saved). However, loan prepayment offers <em>guaranteed</em> savings   SIP returns are market-dependent. Consider a 50-50 split.';
   } else {
     insightTxt.innerHTML='<strong>Prepaying your loan saves more</strong> ('+fmt(Math.max(0,intSaved))+' guaranteed interest saved vs '+fmt(sipNet-sipInv)+' SIP net gain). Loan interest at '+v('c-lrate')+'% is your guaranteed return on prepayment.';
   }
@@ -763,31 +763,34 @@ function calcCmp(){
   if(inp) inp.addEventListener('input', calcCmp);
 });
 
-// ── WHATSAPP SHARE ────────────────────────────────────────
+// -- WHATSAPP SHARE  --
 function waShare(type){
   var msg='';
   if(type==='sip'){
-    msg='📊 *My SIP Calculation (RealReturns.in)*\n\nMonthly SIP: '+fmt(v('s-amt'))+'\nReturn: '+v('s-rate')+'% | Years: '+v('s-yrs')+'\nStep-up: '+v('s-step')+'%\n\n💰 Nominal: '+(el('s-nom').textContent)+'\n🏛️ After LTCG Tax: '+(el('s-ptax').textContent)+'\n🧮 Real Value: '+(el('s-real').textContent)+'\n\n_Calculate yours free at RealReturns.in_';
+    msg='  *My SIP Calculation (RealReturns.in)*\n\nMonthly SIP: '+fmt(v('s-amt'))+'\nReturn: '+v('s-rate')+'% | Years: '+v('s-yrs')+'\nStep-up: '+v('s-step')+'%\n\n  Nominal: '+(el('s-nom').textContent)+'\n   After LTCG Tax: '+(el('s-ptax').textContent)+'\n  Real Value: '+(el('s-real').textContent)+'\n\n_Calculate yours free at RealReturns.in_';
   } else {
-    msg='🏠 *My EMI Calculation (RealReturns.in)*\n\nLoan: '+fmt(v('e-amt'))+'\nRate: '+v('e-rate')+'% | Tenure: '+v('e-yrs')+' years\n\n📋 Monthly EMI: '+(el('e-emi').textContent)+'\n💸 Total Interest: '+(el('e-int').textContent)+'\n💳 Total Payment: '+(el('e-total').textContent)+'\n\n_Calculate yours free at RealReturns.in_';
+    msg='  *My EMI Calculation (RealReturns.in)*\n\nLoan: '+fmt(v('e-amt'))+'\nRate: '+v('e-rate')+'% | Tenure: '+v('e-yrs')+' years\n\n  Monthly EMI: '+(el('e-emi').textContent)+'\n  Total Interest: '+(el('e-int').textContent)+'\n  Total Payment: '+(el('e-total').textContent)+'\n\n_Calculate yours free at RealReturns.in_';
   }
   window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
 }
 
-// ── INIT ──────────────────────────────────────────────────
+// -- INIT  --
 function init(){
-  initSliders();
-  calcSIP();
-  calcEMI();
-  calcCmp();
-  var rto;
-  window.addEventListener('resize',function(){
-    clearTimeout(rto);
-    rto=setTimeout(function(){calcSIP();calcEMI();},250);
-  });
+  try {
+    initSliders();
+    calcSIP();
+    calcEMI();
+    calcCmp();
+    var rto;
+    window.addEventListener('resize',function(){
+      clearTimeout(rto);
+      rto=setTimeout(function(){calcSIP();calcEMI();},250);
+    });
+  } catch(e) {
+    console.error('RealReturns init error:', e);
+  }
 }
-// Run immediately — DOM is already parsed since script is at bottom of body
-init();
+setTimeout(init, 1);
 </script>
 </body>
 </html>
