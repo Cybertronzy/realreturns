@@ -775,17 +775,24 @@ function waShare(type){
 }
 
 // ── INIT ──────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function(){
+function init(){
   initSliders();
   calcSIP();
   calcEMI();
   calcCmp();
-
   var rto;
-  window.addEventListener('resize', function(){
+  window.addEventListener('resize',function(){
     clearTimeout(rto);
-    rto=setTimeout(function(){ calcSIP(); calcEMI(); },250);
+    rto=setTimeout(function(){calcSIP();calcEMI();},250);
   });
+}
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',init);
+} else {
+  init();
+}
+window.addEventListener('load',function(){
+  if(el('s-nom')&&el('s-nom').textContent==='—') init();
 });
 </script>
 </body>
