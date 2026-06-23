@@ -89,16 +89,17 @@ body{font-family:var(--sans);background:var(--surface);color:var(--ink);line-hei
 
 /* RESULTS */
 .trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:18px}
+.pill-val{transition:all .3s ease}
 @media(max-width:540px){.trio{grid-template-columns:1fr}}
 .pill{border-radius:13px;padding:18px 14px;text-align:center}
 .pill.nom{background:var(--greenl);border:1.5px solid var(--green)}
 .pill.tax{background:var(--redl);border:1.5px solid var(--red)}
 .pill.real{background:var(--amberl);border:1.5px solid var(--amber)}
-.pill-lbl{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px}
+.pill-lbl{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px}
 .pill.nom .pill-lbl{color:var(--greend)}
 .pill.tax .pill-lbl{color:#B91C1C}
 .pill.real .pill-lbl{color:#92400E}
-.pill-val{font-family:var(--mono);font-size:clamp(1rem,3vw,1.45rem);font-weight:500;line-height:1.1}
+.pill-val{font-family:var(--mono);font-size:clamp(1.3rem,4vw,2rem);font-weight:700;line-height:1.1}
 .pill.nom .pill-val{color:var(--greend)}
 .pill.tax .pill-val{color:#B91C1C}
 .pill.real .pill-val{color:#92400E}
@@ -107,7 +108,7 @@ body{font-family:var(--sans);background:var(--surface);color:var(--ink);line-hei
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:18px}
 .stat{padding:14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);text-align:center}
 .stat-lbl{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-.stat-val{font-family:var(--mono);font-size:1.15rem;font-weight:500;color:var(--ink);margin-top:3px}
+.stat-val{font-family:var(--mono);font-size:1.35rem;font-weight:700;color:var(--ink);margin-top:3px}
 .up{color:var(--greend)}.dn{color:#B91C1C}.warn{color:#92400E}
 
 /* CHART */
@@ -191,7 +192,7 @@ footer strong{color:#94A3B8}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="eyebrow">🇮🇳 India's Honest Calculator</div>
+  <div class="eyebrow">India's Honest Calculator</div>
   <h1>See your <em>real</em> returns.<br>Not the Instagram version.</h1>
   <p class="hero p">Most SIP calculators hide inflation, LTCG tax, and expense ratios. We show all three — free, no login.</p>
   <div class="hero-stats">
@@ -205,9 +206,9 @@ footer strong{color:#94A3B8}
 <!-- TABS -->
 <div class="tabbar-wrap">
   <div class="tabbar">
-    <button class="tab active" data-panel="sip">📈 SIP Calculator</button>
-    <button class="tab" data-panel="emi">🏠 EMI Calculator</button>
-    <button class="tab" data-panel="cmp">⚖️ SIP vs EMI</button>
+    <button class="tab active" data-panel="sip">&#x25C6; SIP Calculator</button>
+    <button class="tab" data-panel="emi">&#x25C6; EMI Calculator</button>
+    <button class="tab" data-panel="cmp">&#x25C6; SIP vs EMI</button>
   </div>
 </div>
 
@@ -219,13 +220,13 @@ footer strong{color:#94A3B8}
   <p class="sec-sub">Systematic Investment Plan — with step-up, LTCG tax, and inflation reality check.</p>
 
   <div class="banner">
-    <span class="bi">💡</span>
+    <span class="bi">&#x1F4A1;</span>
     <div class="bt"><strong>Why we're different:</strong> Most calculators show only the big "Nominal" number. We also show LTCG tax liability and inflation-adjusted real value so you plan with the truth.</div>
   </div>
 
   <div class="g2">
     <div class="card">
-      <div class="card-title"><span class="ico ico-g">📊</span> Investment Inputs</div>
+      <div class="card-title"><span class="ico ico-g">&#x1F4CA;</span> Investment Inputs</div>
       <div class="fields">
         <div class="field">
           <label>Monthly SIP Amount</label>
@@ -245,7 +246,7 @@ footer strong{color:#94A3B8}
       </div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="ico ico-a">⚙️</span> Honest Inputs</div>
+      <div class="card-title"><span class="ico ico-a">&#x2699;&#xFE0F;</span> Honest Inputs</div>
       <div class="fields">
         <div class="field">
           <label>Annual Step-Up (% increase each year)</label>
@@ -272,11 +273,11 @@ footer strong{color:#94A3B8}
 
   <!-- Results -->
   <div class="card" id="sip-results">
-    <div class="card-title"><span class="ico ico-r">🎯</span> The Real Picture</div>
+    <div class="card-title"><span class="ico ico-r">&#x1F3AF;</span> The Real Picture</div>
     <div class="trio">
-      <div class="pill nom"><div class="pill-lbl">📈 Nominal Corpus</div><div class="pill-val" id="s-nom">Calculating...</div><div class="pill-sub">Pre-tax, pre-inflation</div></div>
-      <div class="pill tax"><div class="pill-lbl">🏛️ After LTCG Tax</div><div class="pill-val" id="s-ptax">Calculating...</div><div class="pill-sub">Tax you'll likely owe</div></div>
-      <div class="pill real"><div class="pill-lbl">🧮 Real Value Today</div><div class="pill-val" id="s-real">Calculating...</div><div class="pill-sub">Inflation-adjusted</div></div>
+      <div class="pill nom"><div class="pill-lbl">Nominal Corpus</div><div class="pill-val" id="s-nom">Calculating...</div><div class="pill-sub">Pre-tax, pre-inflation</div></div>
+      <div class="pill tax"><div class="pill-lbl">After LTCG Tax</div><div class="pill-val" id="s-ptax">Calculating...</div><div class="pill-sub">Tax you'll likely owe</div></div>
+      <div class="pill real"><div class="pill-lbl">Real Value Today</div><div class="pill-val" id="s-real">Calculating...</div><div class="pill-sub">Inflation-adjusted</div></div>
     </div>
     <div class="stats">
       <div class="stat"><div class="stat-lbl">Total Invested</div><div class="stat-val" id="s-inv">—</div></div>
@@ -286,13 +287,13 @@ footer strong{color:#94A3B8}
     </div>
     <div class="chart-wrap"><canvas id="sip-chart"></canvas></div>
     <div class="btns mt16">
-      <button class="btn btn-w" onclick="waShare('sip')">📲 Share on WhatsApp</button>
-      <button class="btn btn-g" onclick="alert('Add jsPDF library to enable PDF download. See documentation.')">⬇️ Download PDF</button>
+      <button class="btn btn-w" onclick="waShare('sip')">&#x2709; Share on WhatsApp</button>
+      <button class="btn btn-g" onclick="alert('Add jsPDF library to enable PDF download. See documentation.')">Download PDF</button>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="ico ico-b">📋</span> Year-by-Year Breakdown</div>
+    <div class="card-title"><span class="ico ico-b">&#x1F4CB;</span> Year-by-Year Breakdown</div>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Year</th><th>Monthly SIP</th><th>Total Invested</th><th>Portfolio Value</th><th>Gains</th><th>Real Value*</th></tr></thead>
       <tbody id="sip-tbody"></tbody>
@@ -320,7 +321,7 @@ footer strong{color:#94A3B8}
 
   <div class="g2">
     <div class="card">
-      <div class="card-title"><span class="ico ico-b">🏠</span> Loan Details</div>
+      <div class="card-title"><span class="ico ico-b">&#x1F3E0;</span> Loan Details</div>
       <div class="fields">
         <div class="field">
           <label>Loan Amount</label>
@@ -340,7 +341,7 @@ footer strong{color:#94A3B8}
       </div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="ico ico-a">💡</span> Prepayment (Optional)</div>
+      <div class="card-title"><span class="ico ico-a">&#x1F4A1;</span> Prepayment (Optional)</div>
       <div class="fields">
         <div class="field">
           <label>Extra Monthly Payment (₹)</label>
@@ -352,7 +353,7 @@ footer strong{color:#94A3B8}
           <div class="input-row"><input type="number" id="e-fee" value="0.5" min="0" max="5" step="0.1"><span class="suf">%</span></div>
         </div>
         <div class="banner" style="margin:0">
-          <span class="bi">💡</span>
+          <span class="bi">&#x1F4A1;</span>
           <div class="bt">Add extra monthly payment to see how much <strong>interest and time you save</strong> with prepayment.</div>
         </div>
       </div>
@@ -360,7 +361,7 @@ footer strong{color:#94A3B8}
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="ico ico-r">📊</span> Loan Summary</div>
+    <div class="card-title"><span class="ico ico-r">&#x1F4CA;</span> Loan Summary</div>
     <div class="stats">
       <div class="stat"><div class="stat-lbl">Monthly EMI</div><div class="stat-val" id="e-emi">—</div></div>
       <div class="stat"><div class="stat-lbl">Total Interest</div><div class="stat-val dn" id="e-int">—</div></div>
@@ -369,7 +370,7 @@ footer strong{color:#94A3B8}
     </div>
     <div id="e-prepay" style="display:none">
       <div class="divider"></div>
-      <div class="card-title" style="margin-bottom:12px"><span class="ico ico-g">⚡</span> Prepayment Savings</div>
+      <div class="card-title" style="margin-bottom:12px"><span class="ico ico-g">&#x26A1;</span> Prepayment Savings</div>
       <div class="stats">
         <div class="stat"><div class="stat-lbl">Interest Saved</div><div class="stat-val up" id="e-saved">—</div></div>
         <div class="stat"><div class="stat-lbl">Time Saved</div><div class="stat-val up" id="e-tsaved">—</div></div>
@@ -378,13 +379,13 @@ footer strong{color:#94A3B8}
     </div>
     <div class="chart-wrap mt16"><canvas id="emi-chart"></canvas></div>
     <div class="btns mt16">
-      <button class="btn btn-w" onclick="waShare('emi')">📲 Share on WhatsApp</button>
-      <button class="btn btn-g" onclick="alert('Add jsPDF library to enable PDF download.')">⬇️ Download PDF</button>
+      <button class="btn btn-w" onclick="waShare('emi')">&#x2709; Share on WhatsApp</button>
+      <button class="btn btn-g" onclick="alert('Add jsPDF library to enable PDF download.')">Download PDF</button>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="ico ico-b">📋</span> Amortisation Schedule</div>
+    <div class="card-title"><span class="ico ico-b">&#x1F4CB;</span> Amortisation Schedule</div>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Year</th><th>EMI/Month</th><th>Principal Paid</th><th>Interest Paid</th><th>Outstanding</th></tr></thead>
       <tbody id="emi-tbody"></tbody>
@@ -398,7 +399,7 @@ footer strong{color:#94A3B8}
   <p class="sec-sub">Should you invest extra money in SIP or prepay your loan? Compare both scenarios.</p>
   <div class="g2">
     <div class="card">
-      <div class="card-title"><span class="ico ico-b">🏠</span> Your Loan</div>
+      <div class="card-title"><span class="ico ico-b">&#x1F3E0;</span> Your Loan</div>
       <div class="fields">
         <div class="field"><label>Loan Amount</label><div class="input-row"><span class="pre">₹</span><input type="number" id="c-loan" value="5000000"></div></div>
         <div class="field"><label>Loan Interest Rate (%/yr)</label><div class="input-row"><input type="number" id="c-lrate" value="8.5" step="0.1"><span class="suf">%</span></div></div>
@@ -407,17 +408,17 @@ footer strong{color:#94A3B8}
       </div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="ico ico-g">📈</span> SIP Assumptions</div>
+      <div class="card-title"><span class="ico ico-g">&#x1F4C8;</span> SIP Assumptions</div>
       <div class="fields">
         <div class="field"><label>Expected SIP Return (%/yr)</label><div class="input-row"><input type="number" id="c-srate" value="12" step="0.5"><span class="suf">%</span></div></div>
         <div class="field"><label>Investment Period (Years)</label><div class="input-row"><input type="number" id="c-syrs" value="20"><span class="suf">Yrs</span></div></div>
         <div class="field"><label>Inflation Rate (%/yr)</label><div class="input-row"><input type="number" id="c-inf" value="6" step="0.5"><span class="suf">%</span></div></div>
-        <div class="banner" style="margin:0"><span class="bi">⚖️</span><div class="bt">Scenario A: Prepay loan with ₹X/month. Scenario B: Invest ₹X in SIP instead.</div></div>
+        <div class="banner" style="margin:0"><span class="bi">&#x2696;&#xFE0F;</span><div class="bt">Scenario A: Prepay loan with ₹X/month. Scenario B: Invest ₹X in SIP instead.</div></div>
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-title"><span class="ico ico-p">🏆</span> Side-by-Side Verdict</div>
+    <div class="card-title"><span class="ico ico-p">&#x1F3C6;</span> Side-by-Side Verdict</div>
     <div class="cmp2 mb18">
       <div class="cwin g"><div class="cwin-lbl">📈 Scenario B — Invest in SIP</div><div class="cwin-val" id="c-sip">—</div><div class="cwin-sub" id="c-sip-sub">Estimated corpus</div></div>
       <div class="cwin b"><div class="cwin-lbl">🏠 Scenario A — Prepay Loan</div><div class="cwin-val" id="c-save">—</div><div class="cwin-sub">Interest saved by prepaying</div></div>
@@ -428,7 +429,7 @@ footer strong{color:#94A3B8}
       <div class="stat"><div class="stat-lbl">Time Saved on Loan</div><div class="stat-val up" id="c-tsave">—</div></div>
       <div class="stat"><div class="stat-lbl">Better Option</div><div class="stat-val" id="c-verdict">—</div></div>
     </div>
-    <div class="banner mt16" id="c-insight" style="display:none"><span class="bi">🧠</span><div class="bt" id="c-insight-txt"></div></div>
+    <div class="banner mt16" id="c-insight" style="display:none"><span class="bi">&#x1F9E0;</span><div class="bt" id="c-insight-txt"></div></div>
   </div>
 </div>
 
