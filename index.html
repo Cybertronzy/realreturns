@@ -786,14 +786,8 @@ function init(){
     rto=setTimeout(function(){calcSIP();calcEMI();},250);
   });
 }
-if(document.readyState==='loading'){
-  document.addEventListener('DOMContentLoaded',init);
-} else {
-  init();
-}
-window.addEventListener('load',function(){
-  if(el('s-nom')&&el('s-nom').textContent==='—') init();
-});
+// Run immediately — DOM is already parsed since script is at bottom of body
+init();
 </script>
 </body>
 </html>
