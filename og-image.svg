@@ -1,0 +1,46 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A"/>
+      <stop offset="100%" style="stop-color:#1E293B"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10B981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Green accent bar -->
+  <rect width="1200" height="6" fill="url(#green)" y="0"/>
+  <!-- Glow effect -->
+  <ellipse cx="600" cy="0" rx="500" ry="200" fill="#10B981" opacity="0.08"/>
+  <!-- Badge -->
+  <rect x="80" y="80" width="260" height="40" rx="20" fill="#10B98120" stroke="#10B981" stroke-width="1.5"/>
+  <text x="210" y="106" font-family="Arial" font-size="14" fill="#10B981" text-anchor="middle" font-weight="600" letter-spacing="2">INDIA'S HONEST CALCULATOR</text>
+  <!-- Main headline -->
+  <text x="80" y="200" font-family="Georgia" font-size="62" fill="white" font-weight="bold">See your</text>
+  <text x="80" y="275" font-family="Georgia" font-size="62" fill="#10B981" font-weight="bold">real returns.</text>
+  <text x="80" y="350" font-family="Georgia" font-size="62" fill="white" font-weight="bold">Not the Instagram</text>
+  <text x="80" y="425" font-family="Georgia" font-size="62" fill="white" font-weight="bold">version.</text>
+  <!-- Features row -->
+  <rect x="80" y="490" width="220" height="44" rx="8" fill="#10B98115" stroke="#10B98140" stroke-width="1"/>
+  <text x="190" y="518" font-family="Arial" font-size="15" fill="#10B981" text-anchor="middle" font-weight="600">LTCG Tax Included</text>
+  <rect x="316" y="490" width="240" height="44" rx="8" fill="#10B98115" stroke="#10B98140" stroke-width="1"/>
+  <text x="436" y="518" font-family="Arial" font-size="15" fill="#10B981" text-anchor="middle" font-weight="600">Inflation Adjusted</text>
+  <rect x="572" y="490" width="220" height="44" rx="8" fill="#10B98115" stroke="#10B98140" stroke-width="1"/>
+  <text x="682" y="518" font-family="Arial" font-size="15" fill="#10B981" text-anchor="middle" font-weight="600">Step-up SIP</text>
+  <!-- Right side numbers panel -->
+  <rect x="820" y="130" width="310" height="330" rx="20" fill="white" opacity="0.05" stroke="white" stroke-width="1" stroke-opacity="0.1"/>
+  <text x="975" y="185" font-family="Arial" font-size="13" fill="#94A3B8" text-anchor="middle" font-weight="600" letter-spacing="1">NOMINAL CORPUS</text>
+  <text x="975" y="235" font-family="Georgia" font-size="42" fill="#10B981" text-anchor="middle" font-weight="bold">48.11 L</text>
+  <line x1="850" y1="260" x2="1100" y2="260" stroke="#334155" stroke-width="1"/>
+  <text x="975" y="300" font-family="Arial" font-size="13" fill="#94A3B8" text-anchor="middle" font-weight="600" letter-spacing="1">AFTER LTCG TAX</text>
+  <text x="975" y="348" font-family="Georgia" font-size="42" fill="#EF4444" text-anchor="middle" font-weight="bold">46.69 L</text>
+  <line x1="850" y1="372" x2="1100" y2="372" stroke="#334155" stroke-width="1"/>
+  <text x="975" y="410" font-family="Arial" font-size="13" fill="#94A3B8" text-anchor="middle" font-weight="600" letter-spacing="1">REAL VALUE TODAY</text>
+  <text x="975" y="455" font-family="Georgia" font-size="42" fill="#F59E0B" text-anchor="middle" font-weight="bold">19.48 L</text>
+  <!-- Domain -->
+  <text x="80" y="600" font-family="Arial" font-size="22" fill="#475569" font-weight="500">siptruth.com</text>
+  <text x="1120" y="600" font-family="Arial" font-size="18" fill="#475569" text-anchor="end">Free. No login. No nonsense.</text>
+</svg>

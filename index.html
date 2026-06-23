@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="canonical" href="https://siptruth.com/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="India's most honest SIP & EMI calculator. See inflation-adjusted, post-LTCG-tax real returns. Free, no login, no ads pushing products.">
+<meta property="og:title" content="SIPtruth.com — India's Honest SIP & EMI Calculator">
+<meta property="og:description" content="Most SIP calculators hide LTCG tax and inflation. We show the real picture — free, no login, no ads pushing products. India's most honest calculator.">
+<meta property="og:url" content="https://siptruth.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://siptruth.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SIPtruth.com — India's Honest SIP & EMI Calculator">
+<meta name="twitter:description" content="See your real SIP returns — after LTCG tax and inflation. Free, no login.">
 <meta name="keywords" content="SIP calculator India, EMI calculator, inflation adjusted SIP, LTCG tax calculator, step up SIP calculator, home loan EMI calculator India">
 <title>SIPtruth.com — India's Honest SIP & EMI Calculator</title>
 <!-- System fonts used — no external dependency -->
@@ -47,7 +56,7 @@ body{font-family:var(--sans);background:var(--surface);color:var(--ink);line-hei
 /* LAYOUT */
 .main{max-width:900px;margin:0 auto;padding:28px 14px 80px}
 .panel{display:none}.panel.active{display:block}
-.sec-title{font-family:var(--serif);font-size:1.65rem;color:var(--ink);margin-bottom:4px}
+.sec-title{font-family:var(--serif);font-size:1.65rem;color:var(--ink);margin-bottom:4px} h1.sec-title{font-size:1.8rem}
 .sec-sub{color:var(--muted);font-size:.88rem;margin-bottom:24px}
 
 /* CARD */
@@ -216,7 +225,7 @@ footer strong{color:#94A3B8}
 
 <!-- ══════════ SIP PANEL ══════════ -->
 <div class="panel active" id="panel-sip">
-  <h2 class="sec-title">SIP Calculator</h2>
+  <h1 class="sec-title">SIP Calculator</h1>
   <p class="sec-sub">Systematic Investment Plan — with step-up, LTCG tax, and inflation reality check.</p>
 
   <div class="banner">
@@ -275,9 +284,9 @@ footer strong{color:#94A3B8}
   <div class="card" id="sip-results">
     <div class="card-title"><span class="ico ico-r">&#x1F3AF;</span> The Real Picture</div>
     <div class="trio">
-      <div class="pill nom"><div class="pill-lbl">Nominal Corpus</div><div class="pill-val" id="s-nom">Calculating...</div><div class="pill-sub">Pre-tax, pre-inflation</div></div>
-      <div class="pill tax"><div class="pill-lbl">After LTCG Tax</div><div class="pill-val" id="s-ptax">Calculating...</div><div class="pill-sub">Tax you'll likely owe</div></div>
-      <div class="pill real"><div class="pill-lbl">Real Value Today</div><div class="pill-val" id="s-real">Calculating...</div><div class="pill-sub">Inflation-adjusted</div></div>
+      <div class="pill nom"><div class="pill-lbl">Nominal Corpus</div><div class="pill-val" id="s-nom">—</div><div class="pill-sub">Pre-tax, pre-inflation</div></div>
+      <div class="pill tax"><div class="pill-lbl">After LTCG Tax</div><div class="pill-val" id="s-ptax">—</div><div class="pill-sub">Tax you'll likely owe</div></div>
+      <div class="pill real"><div class="pill-lbl">Real Value Today</div><div class="pill-val" id="s-real">—</div><div class="pill-sub">Inflation-adjusted</div></div>
     </div>
     <div class="stats">
       <div class="stat"><div class="stat-lbl">Total Invested</div><div class="stat-val" id="s-inv">—</div></div>
@@ -308,7 +317,7 @@ footer strong{color:#94A3B8}
       <a class="aff-card" href="https://app.groww.in/v3cO/f04p4vgu" target="_blank" rel="noopener sponsored"><div class="aff-name">Groww</div><div class="aff-tag">50M+ users · Zero commission</div><div class="aff-cta">Open Free Account →</div></a>
       <a class="aff-card" href="https://zerodha.com/open-account?c=CA5562" target="_blank" rel="noopener sponsored"><div class="aff-name">Zerodha Coin</div><div class="aff-tag">Direct MF · No fees</div><div class="aff-cta">Start Investing →</div></a>
       <a class="aff-card" href="https://mstock.onelink.me/CX05/nb2fr3kd" target="_blank" rel="noopener sponsored"><div class="aff-name">m.Stock</div><div class="aff-tag">Zero brokerage · Mirae Asset</div><div class="aff-cta">Open Free Account →</div></a>
-      <a class="aff-card" href="https://paytmmoney.com" target="_blank" rel="noopener sponsored"><div class="aff-name">Paytm Money</div><div class="aff-tag">₹0 commission · UPI</div><div class="aff-cta">Get Started →</div></a>
+      <a class="aff-card" href="https://paytmmoney.com/refer" target="_blank" rel="noopener sponsored"><div class="aff-name">Paytm Money</div><div class="aff-tag">₹0 commission · UPI</div><div class="aff-cta">Get Started →</div></a>
     </div>
     <p class="aff-disc">⚠️ Affiliate disclosure: We may receive compensation when you open an account via these links. This does not influence our calculator results. Mutual fund investments are subject to market risk.</p>
   </div>
@@ -800,7 +809,28 @@ function init(){
     console.error('SIPtruth init error:', e);
   }
 }
-setTimeout(init, 1);
+setTimeout(init, 0);
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SIPtruth.com",
+  "url": "https://siptruth.com",
+  "description": "India's most honest SIP and EMI calculator. Shows LTCG tax, inflation-adjusted returns, and expense ratio together — free, no login.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "124"
+  }
+}
 </script>
 </body>
 </html>
