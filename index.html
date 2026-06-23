@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="India's most honest SIP & EMI calculator. See inflation-adjusted, post-LTCG-tax real returns. Free, no login, no ads pushing products.">
 <meta name="keywords" content="SIP calculator India, EMI calculator, inflation adjusted SIP, LTCG tax calculator, step up SIP calculator, home loan EMI calculator India">
-<title>RealReturns.in — India's Honest SIP & EMI Calculator</title>
+<title>SIPtruth.com — India's Honest SIP & EMI Calculator</title>
 <!-- System fonts used — no external dependency -->
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -433,7 +433,7 @@ footer strong{color:#94A3B8}
 </main>
 
 <footer>
-  <strong>RealReturns.in</strong> — India's Honest SIP & EMI Calculator<br>
+  <strong>SIPtruth.com</strong> — India's Honest SIP & EMI Calculator<br>
   Built for Indian investors who deserve the full picture.<br><br>
   ⚠️ <em>Disclaimer: All calculations are illustrative only. Mutual fund investments are subject to market risks. LTCG tax estimates are approximate — consult a CA for exact liability. Not investment advice. Not SEBI-registered.</em><br><br>
   Made with ❤️ in India &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="about.html">About Us</a>
@@ -774,9 +774,9 @@ function calcCmp(){
 function waShare(type){
   var msg='';
   if(type==='sip'){
-    msg='  *My SIP Calculation (RealReturns.in)*\n\nMonthly SIP: '+fmt(v('s-amt'))+'\nReturn: '+v('s-rate')+'% | Years: '+v('s-yrs')+'\nStep-up: '+v('s-step')+'%\n\n  Nominal: '+(el('s-nom').textContent)+'\n   After LTCG Tax: '+(el('s-ptax').textContent)+'\n  Real Value: '+(el('s-real').textContent)+'\n\n_Calculate yours free at RealReturns.in_';
+    msg='  *My SIP Calculation (SIPtruth.com)*\n\nMonthly SIP: '+fmt(v('s-amt'))+'\nReturn: '+v('s-rate')+'% | Years: '+v('s-yrs')+'\nStep-up: '+v('s-step')+'%\n\n  Nominal: '+(el('s-nom').textContent)+'\n   After LTCG Tax: '+(el('s-ptax').textContent)+'\n  Real Value: '+(el('s-real').textContent)+'\n\n_Calculate yours free at SIPtruth.com_';
   } else {
-    msg='  *My EMI Calculation (RealReturns.in)*\n\nLoan: '+fmt(v('e-amt'))+'\nRate: '+v('e-rate')+'% | Tenure: '+v('e-yrs')+' years\n\n  Monthly EMI: '+(el('e-emi').textContent)+'\n  Total Interest: '+(el('e-int').textContent)+'\n  Total Payment: '+(el('e-total').textContent)+'\n\n_Calculate yours free at RealReturns.in_';
+    msg='  *My EMI Calculation (SIPtruth.com)*\n\nLoan: '+fmt(v('e-amt'))+'\nRate: '+v('e-rate')+'% | Tenure: '+v('e-yrs')+' years\n\n  Monthly EMI: '+(el('e-emi').textContent)+'\n  Total Interest: '+(el('e-int').textContent)+'\n  Total Payment: '+(el('e-total').textContent)+'\n\n_Calculate yours free at SIPtruth.com_';
   }
   window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
 }
@@ -794,7 +794,7 @@ function init(){
       rto=setTimeout(function(){calcSIP();calcEMI();},250);
     });
   } catch(e) {
-    console.error('RealReturns init error:', e);
+    console.error('SIPtruth init error:', e);
   }
 }
 setTimeout(init, 1);
