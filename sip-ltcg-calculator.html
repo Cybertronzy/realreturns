@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://siptruth.com/sip-ltcg-calculator.html">
+<meta name="description" content="India's only SIP calculator that shows LTCG tax impact. Calculate your real post-tax mutual fund returns. Free, no login.">
+<meta name="keywords" content="SIP LTCG tax calculator, mutual fund LTCG calculator India, SIP post tax returns, LTCG on mutual funds calculator">
+<meta property="og:title" content="SIP LTCG Tax Calculator — See Your Real Post-Tax Returns">
+<meta property="og:description" content="Most SIP calculators hide LTCG tax. Ours shows you exactly how much tax you'll owe and what your real take-home corpus is.">
+<meta property="og:url" content="https://siptruth.com/sip-ltcg-calculator.html">
+<title>SIP LTCG Tax Calculator India — Real Post-Tax Returns | SIPtruth.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0F172A;--ink3:#334155;--muted:#64748B;--border:#E2E8F0;--surface:#F8FAFC;--white:#fff;--green:#10B981;--greend:#059669;--greenl:#D1FAE5;--amber:#F59E0B;--amberl:#FEF3C7;--red:#EF4444;--redl:#FEE2E2;--r:12px;--rl:20px}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--surface);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+.topnav{background:var(--ink);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:Georgia,serif;color:#fff;font-size:1.15rem;text-decoration:none}
+.logo span{color:var(--green)}
+.back{color:#94A3B8;font-size:.83rem;text-decoration:none}
+.back:hover{color:#fff}
+.hero{background:var(--ink);padding:44px 20px 56px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% -10%,rgba(16,185,129,.18) 0%,transparent 70%)}
+.eyebrow{display:inline-flex;align-items:center;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);color:var(--green);font-size:11px;font-weight:700;letter-spacing:.1em;padding:5px 14px;border-radius:100px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(1.6rem,4vw,2.6rem);color:#fff;line-height:1.2;max-width:680px;margin:0 auto 12px}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero p{color:#94A3B8;font-size:.93rem;max-width:540px;margin:0 auto}
+.main{max-width:860px;margin:0 auto;padding:32px 16px 80px}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--rl);box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.06);padding:28px;margin-bottom:20px}
+.card h2{font-family:Georgia,serif;font-size:1.35rem;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--greenl)}
+.card h3{font-size:1rem;font-weight:700;color:var(--ink);margin:20px 0 8px}
+p{color:var(--ink3);font-size:.92rem;margin-bottom:12px}
+ul{color:var(--ink3);font-size:.92rem;padding-left:20px;margin-bottom:12px}
+ul li{margin-bottom:7px}
+.highlight{background:var(--greenl);border:1px solid var(--green);border-radius:var(--r);padding:16px 20px;margin:16px 0}
+.highlight p{color:#064E3B;margin:0;font-weight:600;font-size:.93rem}
+.warn{background:var(--redl);border:1px solid var(--red);border-radius:var(--r);padding:16px 20px;margin:16px 0}
+.warn p{color:#7F1D1D;margin:0;font-size:.9rem}
+.example-table{width:100%;border-collapse:collapse;font-size:.85rem;margin:16px 0;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.example-table thead{background:var(--ink);color:#fff}
+.example-table th{padding:10px 14px;text-align:right;font-weight:600}
+.example-table th:first-child{text-align:left}
+.example-table td{padding:9px 14px;text-align:right;border-bottom:1px solid var(--border)}
+.example-table td:first-child{text-align:left;font-weight:600}
+.example-table tr:last-child td{border-bottom:none}
+.example-table tr:nth-child(even) td{background:var(--surface)}
+.td-g{color:var(--greend);font-weight:700}
+.td-r{color:#B91C1C;font-weight:700}
+.td-a{color:#92400E;font-weight:700}
+.cta-card{background:linear-gradient(135deg,var(--green),var(--greend));border-radius:var(--rl);padding:32px;text-align:center;margin:28px 0}
+.cta-card h2{font-family:Georgia,serif;color:#fff;font-size:1.5rem;margin-bottom:10px;border:none;padding:0}
+.cta-card p{color:rgba(255,255,255,.85);margin-bottom:20px;font-size:.95rem}
+.cta-btn{display:inline-block;background:#fff;color:var(--greend);font-weight:800;font-size:.95rem;padding:13px 30px;border-radius:10px;text-decoration:none;transition:transform .15s}
+.cta-btn:hover{transform:translateY(-2px)}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-weight:700;color:var(--ink);margin-bottom:8px;font-size:.93rem}
+.faq-a{color:var(--ink3);font-size:.88rem}
+footer{background:var(--ink);color:#64748B;text-align:center;padding:24px;font-size:.78rem;line-height:1.8}
+footer a{color:var(--green);text-decoration:none}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="index.html" class="logo">SIP<span>Truth</span>.com</a>
+  <a href="index.html" class="back">← Use the Calculator</a>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">LTCG Tax Reality Check</div>
+  <h1>SIP Calculator with <em>LTCG Tax</em> — See What You Actually Take Home</h1>
+  <p>Most SIP calculators show you the pre-tax corpus. We show you the post-tax reality. Here's why it matters more than you think.</p>
+</section>
+
+<main class="main">
+
+  <div class="warn">
+    <p>⚠️ <strong>Did you know?</strong> A ₹10,000/month SIP at 12% for 20 years shows ₹99.9 lakh on most calculators. After LTCG tax at 12.5%, you actually take home approximately ₹88–92 lakh. That's a difference of ₹7–12 lakh that nobody tells you about.</p>
+  </div>
+
+  <div class="card">
+    <h2>What is LTCG Tax on Mutual Funds?</h2>
+    <p>Long Term Capital Gains (LTCG) tax applies to profits from equity mutual fund investments held for more than 1 year. As per the Union Budget 2024, the LTCG tax rate on equity mutual funds is:</p>
+    <ul>
+      <li><strong>Tax Rate:</strong> 12.5% on gains above ₹1.25 lakh per financial year</li>
+      <li><strong>Exemption:</strong> First ₹1.25 lakh of gains every year is tax-free</li>
+      <li><strong>Applies to:</strong> Equity mutual funds, ELSS, Index funds, ETFs</li>
+      <li><strong>Does NOT apply to:</strong> Debt funds (taxed as per income slab), PPF, EPF</li>
+    </ul>
+    <div class="highlight">
+      <p>✅ Good news: The ₹1.25 lakh annual exemption is significant for small investors. If your annual SIP gains are below this threshold, you pay zero LTCG tax.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>LTCG Tax Impact — Real Examples</h2>
+    <p>Here's how LTCG tax affects different SIP scenarios (assumed 12% annual return, 6% inflation):</p>
+    <table class="example-table">
+      <thead>
+        <tr><th>Monthly SIP</th><th>Years</th><th>Nominal Corpus</th><th>Est. LTCG Tax</th><th>Post-Tax Corpus</th><th>Real Value*</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>₹5,000</td><td>10</td><td>₹11.61 L</td><td class="td-r">-₹0.21 L</td><td class="td-g">₹11.40 L</td><td class="td-a">₹6.38 L</td></tr>
+        <tr><td>₹10,000</td><td>15</td><td>₹48.11 L</td><td class="td-r">-₹1.42 L</td><td class="td-g">₹46.69 L</td><td class="td-a">₹19.48 L</td></tr>
+        <tr><td>₹15,000</td><td>20</td><td>₹1.49 Cr</td><td class="td-r">-₹8.9 L</td><td class="td-g">₹1.40 Cr</td><td class="td-a">₹46.5 L</td></tr>
+        <tr><td>₹25,000</td><td>25</td><td>₹3.91 Cr</td><td class="td-r">-₹27 L</td><td class="td-g">₹3.64 Cr</td><td class="td-a">₹89.6 L</td></tr>
+        <tr><td>₹50,000</td><td>30</td><td>₹17.6 Cr</td><td class="td-r">-₹1.46 Cr</td><td class="td-g">₹16.1 Cr</td><td class="td-a">₹2.48 Cr</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.78rem;color:var(--muted)">*Real value = inflation-adjusted in today's purchasing power at 6% annual inflation. LTCG estimates are approximate — consult a CA for exact liability.</p>
+  </div>
+
+  <div class="card">
+    <h2>How to Reduce LTCG Tax on SIP</h2>
+    <h3>1. Use the ₹1.25 Lakh Annual Exemption Strategically</h3>
+    <p>You can redeem up to ₹1.25 lakh of gains every year tax-free. This is called "tax harvesting" — sell and rebuy to reset your cost basis annually.</p>
+    <h3>2. Invest via ELSS (Tax Saving Funds)</h3>
+    <p>ELSS funds qualify for Section 80C deduction up to ₹1.5 lakh per year, reducing your taxable income. They have a 3-year lock-in and are equity-based.</p>
+    <h3>3. SIP in Your Spouse or Parent's Name</h3>
+    <p>If your spouse or retired parent has a lower tax bracket, investing in their name can reduce the overall tax burden on the family.</p>
+    <h3>4. Long Holding Periods Dilute Tax Impact</h3>
+    <p>As the example table shows, LTCG tax as a percentage of corpus decreases with longer holding periods. A 30-year SIP pays only ~8% of corpus as tax vs ~12% for a 15-year SIP.</p>
+    <div class="highlight">
+      <p>✅ Key insight: LTCG tax, while significant, should not stop you from investing in equity mutual funds. The post-tax returns of equity SIP still beat FD, RD, and PPF returns significantly over 10+ years.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">Is LTCG tax applicable on SIP investments?</div>
+      <div class="faq-a">Yes. Each SIP instalment is treated as a separate investment. Units held for more than 12 months qualify as long-term. Gains above ₹1.25 lakh per year are taxed at 12.5% without indexation benefit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How is LTCG calculated on SIP?</div>
+      <div class="faq-a">Each monthly SIP instalment is tracked separately. When you redeem, the FIFO (First In, First Out) method is used — the oldest units are sold first. Gains on each set of units held 12+ months are taxed at 12.5% above the ₹1.25L exemption.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is the LTCG tax rate on mutual funds in 2026?</div>
+      <div class="faq-a">12.5% on equity mutual fund gains above ₹1.25 lakh per financial year, as per the Union Budget 2024. This rate applies from July 23, 2024 onwards.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does LTCG apply to ELSS mutual funds?</div>
+      <div class="faq-a">Yes. ELSS funds are equity funds and attract the same 12.5% LTCG tax on gains above ₹1.25 lakh. However, you get Section 80C benefit of up to ₹1.5 lakh deduction on investment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How to avoid LTCG tax on SIP?</div>
+      <div class="faq-a">You cannot completely avoid LTCG tax on equity SIPs. However, you can minimise it by: (1) annual tax harvesting up to ₹1.25L, (2) investing in ELSS for 80C benefit, (3) investing via family members in lower tax brackets.</div>
+    </div>
+  </div>
+
+  <div class="cta-card">
+    <h2>Calculate Your Real SIP Returns</h2>
+    <p>Use our free calculator to see your exact LTCG tax liability and inflation-adjusted real corpus — in seconds.</p>
+    <a href="index.html" class="cta-btn">Open Free Calculator →</a>
+  </div>
+
+</main>
+
+<footer>
+  <strong>SIPtruth.com</strong> — India's Honest SIP & EMI Calculator<br>
+  <a href="index.html">Calculator</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a><br><br>
+  ⚠️ Disclaimer: All calculations are illustrative only. LTCG tax estimates are approximate. Consult a qualified CA for exact tax liability. Not investment advice.
+</footer>
+</body>
+</html>
