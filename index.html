@@ -2,22 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="canonical" href="https://siptruth.com/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="India's most honest SIP & EMI calculator. See inflation-adjusted, post-LTCG-tax real returns. Free, no login, no ads pushing products.">
-<meta property="og:title" content="SIPtruth.com — India's Honest SIP & EMI Calculator">
-<meta property="og:description" content="Most SIP calculators hide LTCG tax and inflation. We show the real picture — free, no login, no ads pushing products. India's most honest calculator.">
-<meta property="og:url" content="https://siptruth.com">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://siptruth.com/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SIPtruth.com — India's Honest SIP & EMI Calculator">
-<meta name="twitter:description" content="See your real SIP returns — after LTCG tax and inflation. Free, no login.">
 <meta name="keywords" content="SIP calculator India, EMI calculator, inflation adjusted SIP, LTCG tax calculator, step up SIP calculator, home loan EMI calculator India">
-<title>SIPtruth.com — India's Honest SIP & EMI Calculator</title>
+<title>RealReturns.in — India's Honest SIP & EMI Calculator</title>
 <!-- System fonts used — no external dependency -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -58,7 +47,7 @@ body{font-family:var(--sans);background:var(--surface);color:var(--ink);line-hei
 /* LAYOUT */
 .main{max-width:900px;margin:0 auto;padding:28px 14px 80px}
 .panel{display:none}.panel.active{display:block}
-.sec-title{font-family:var(--serif);font-size:1.65rem;color:var(--ink);margin-bottom:4px} h1.sec-title{font-size:1.8rem}
+.sec-title{font-family:var(--serif);font-size:1.65rem;color:var(--ink);margin-bottom:4px}
 .sec-sub{color:var(--muted);font-size:.88rem;margin-bottom:24px}
 
 /* CARD */
@@ -99,30 +88,26 @@ body{font-family:var(--sans);background:var(--surface);color:var(--ink);line-hei
 .toggle-label{font-size:.83rem;font-weight:500;color:var(--ink3)}
 
 /* RESULTS */
-.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
-@media(max-width:480px){.trio{grid-template-columns:1fr;gap:10px}}
-.pill-val{transition:all .25s ease}
-@keyframes numPop{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
-.pill-val.updated{animation:numPop .3s ease}
+.trio{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:18px}
 @media(max-width:540px){.trio{grid-template-columns:1fr}}
-.pill{border-radius:16px;padding:24px 16px;text-align:center}
+.pill{border-radius:13px;padding:18px 14px;text-align:center}
 .pill.nom{background:var(--greenl);border:1.5px solid var(--green)}
 .pill.tax{background:var(--redl);border:1.5px solid var(--red)}
 .pill.real{background:var(--amberl);border:1.5px solid var(--amber)}
-.pill-lbl{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;opacity:.85}
+.pill-lbl{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px}
 .pill.nom .pill-lbl{color:var(--greend)}
 .pill.tax .pill-lbl{color:#B91C1C}
 .pill.real .pill-lbl{color:#92400E}
-.pill-val{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:clamp(1.9rem,5.5vw,2.6rem);font-weight:800;line-height:1.05;letter-spacing:-0.02em}
+.pill-val{font-family:var(--mono);font-size:clamp(1rem,3vw,1.45rem);font-weight:500;line-height:1.1}
 .pill.nom .pill-val{color:var(--greend)}
 .pill.tax .pill-val{color:#B91C1C}
 .pill.real .pill-val{color:#92400E}
 .pill-sub{font-size:.68rem;color:var(--muted);margin-top:3px}
 
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:18px}
-.stat{padding:16px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);text-align:center}
-.stat-lbl{font-size:.65rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
-.stat-val{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:1.45rem;font-weight:800;color:var(--ink);margin-top:4px;letter-spacing:-0.01em}
+.stat{padding:14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);text-align:center}
+.stat-lbl{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.stat-val{font-family:var(--mono);font-size:1.15rem;font-weight:500;color:var(--ink);margin-top:3px}
 .up{color:var(--greend)}.dn{color:#B91C1C}.warn{color:#92400E}
 
 /* CHART */
@@ -179,7 +164,7 @@ tbody td:first-child{text-align:left;font-family:var(--sans);font-weight:500}
 .cwin-lbl{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .cwin.g .cwin-lbl{color:var(--greend)}
 .cwin.b .cwin-lbl{color:#1D4ED8}
-.cwin-val{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:1.9rem;font-weight:800;margin:8px 0 4px;letter-spacing:-0.02em}
+.cwin-val{font-family:var(--mono);font-size:1.7rem;font-weight:500;margin:6px 0 3px}
 .cwin.g .cwin-val{color:var(--greend)}
 .cwin.b .cwin-val{color:#1D4ED8}
 .cwin-sub{font-size:.76rem;color:var(--muted)}
@@ -191,8 +176,6 @@ footer{background:var(--ink);color:#64748B;text-align:center;padding:28px 20px;f
 footer a{color:var(--green);text-decoration:none}
 footer strong{color:#94A3B8}
 </style>
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2091335285715454" crossorigin="anonymous"></script>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9930LG4SF0"></script>
 <script>
@@ -206,7 +189,7 @@ footer strong{color:#94A3B8}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="eyebrow">India's Honest Calculator</div>
+  <div class="eyebrow">🇮🇳 India's Honest Calculator</div>
   <h1>See your <em>real</em> returns.<br>Not the Instagram version.</h1>
   <p class="hero p">Most SIP calculators hide inflation, LTCG tax, and expense ratios. We show all three — free, no login.</p>
   <div class="hero-stats">
@@ -220,9 +203,9 @@ footer strong{color:#94A3B8}
 <!-- TABS -->
 <div class="tabbar-wrap">
   <div class="tabbar">
-    <button class="tab active" data-panel="sip">&#x25C6; SIP Calculator</button>
-    <button class="tab" data-panel="emi">&#x25C6; EMI Calculator</button>
-    <button class="tab" data-panel="cmp">&#x25C6; SIP vs EMI</button>
+    <button class="tab active" data-panel="sip">📈 SIP Calculator</button>
+    <button class="tab" data-panel="emi">🏠 EMI Calculator</button>
+    <button class="tab" data-panel="cmp">⚖️ SIP vs EMI</button>
   </div>
 </div>
 
@@ -230,17 +213,17 @@ footer strong{color:#94A3B8}
 
 <!-- ══════════ SIP PANEL ══════════ -->
 <div class="panel active" id="panel-sip">
-  <h1 class="sec-title">SIP Calculator</h1>
+  <h2 class="sec-title">SIP Calculator</h2>
   <p class="sec-sub">Systematic Investment Plan — with step-up, LTCG tax, and inflation reality check.</p>
 
   <div class="banner">
-    <span class="bi">&#x1F4A1;</span>
+    <span class="bi">💡</span>
     <div class="bt"><strong>Why we're different:</strong> Most calculators show only the big "Nominal" number. We also show LTCG tax liability and inflation-adjusted real value so you plan with the truth.</div>
   </div>
 
   <div class="g2">
     <div class="card">
-      <div class="card-title"><span class="ico ico-g">&#x1F4CA;</span> Investment Inputs</div>
+      <div class="card-title"><span class="ico ico-g">📊</span> Investment Inputs</div>
       <div class="fields">
         <div class="field">
           <label>Monthly SIP Amount</label>
@@ -260,7 +243,7 @@ footer strong{color:#94A3B8}
       </div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="ico ico-a">&#x2699;&#xFE0F;</span> Honest Inputs</div>
+      <div class="card-title"><span class="ico ico-a">⚙️</span> Honest Inputs</div>
       <div class="fields">
         <div class="field">
           <label>Annual Step-Up (% increase each year)</label>
@@ -287,11 +270,11 @@ footer strong{color:#94A3B8}
 
   <!-- Results -->
   <div class="card" id="sip-results">
-    <div class="card-title"><span class="ico ico-r">&#x1F3AF;</span> The Real Picture</div>
+    <div class="card-title"><span class="ico ico-r">🎯</span> The Real Picture</div>
     <div class="trio">
-      <div class="pill nom"><div class="pill-lbl">Nominal Corpus</div><div class="pill-val" id="s-nom">—</div><div class="pill-sub">Pre-tax, pre-inflation</div></div>
-      <div class="pill tax"><div class="pill-lbl">After LTCG Tax</div><div class="pill-val" id="s-ptax">—</div><div class="pill-sub">Tax you'll likely owe</div></div>
-      <div class="pill real"><div class="pill-lbl">Real Value Today</div><div class="pill-val" id="s-real">—</div><div class="pill-sub">Inflation-adjusted</div></div>
+      <div class="pill nom"><div class="pill-lbl">📈 Nominal Corpus</div><div class="pill-val" id="s-nom">Calculating...</div><div class="pill-sub">Pre-tax, pre-inflation</div></div>
+      <div class="pill tax"><div class="pill-lbl">🏛️ After LTCG Tax</div><div class="pill-val" id="s-ptax">Calculating...</div><div class="pill-sub">Tax you'll likely owe</div></div>
+      <div class="pill real"><div class="pill-lbl">🧮 Real Value Today</div><div class="pill-val" id="s-real">Calculating...</div><div class="pill-sub">Inflation-adjusted</div></div>
     </div>
     <div class="stats">
       <div class="stat"><div class="stat-lbl">Total Invested</div><div class="stat-val" id="s-inv">—</div></div>
@@ -301,13 +284,13 @@ footer strong{color:#94A3B8}
     </div>
     <div class="chart-wrap"><canvas id="sip-chart"></canvas></div>
     <div class="btns mt16">
-      <button class="btn btn-w" onclick="waShare('sip')">&#x2709; Share on WhatsApp</button>
-      <button class="btn btn-g" onclick="alert('Add jsPDF library to enable PDF download. See documentation.')">Download PDF</button>
+      <button class="btn btn-w" onclick="waShare('sip')">📲 Share on WhatsApp</button>
+      <button class="btn btn-g" onclick="alert('Add jsPDF library to enable PDF download. See documentation.')">⬇️ Download PDF</button>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="ico ico-b">&#x1F4CB;</span> Year-by-Year Breakdown</div>
+    <div class="card-title"><span class="ico ico-b">📋</span> Year-by-Year Breakdown</div>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Year</th><th>Monthly SIP</th><th>Total Invested</th><th>Portfolio Value</th><th>Gains</th><th>Real Value*</th></tr></thead>
       <tbody id="sip-tbody"></tbody>
@@ -319,10 +302,10 @@ footer strong{color:#94A3B8}
     <h3>Ready to start your SIP?</h3>
     <p>Open a free account with India's leading platforms. We earn a small commission if you sign up — disclosed transparently.</p>
     <div class="aff-grid">
-      <a class="aff-card" href="https://app.groww.in/v3cO/f04p4vgu" target="_blank" rel="noopener sponsored"><div class="aff-name">Groww</div><div class="aff-tag">50M+ users · Zero commission</div><div class="aff-cta">Open Free Account →</div></a>
-      <a class="aff-card" href="https://zerodha.com/open-account?c=CA5562" target="_blank" rel="noopener sponsored"><div class="aff-name">Zerodha Coin</div><div class="aff-tag">Direct MF · No fees</div><div class="aff-cta">Start Investing →</div></a>
-      <a class="aff-card" href="https://mstock.onelink.me/CX05/nb2fr3kd" target="_blank" rel="noopener sponsored"><div class="aff-name">m.Stock</div><div class="aff-tag">Zero brokerage · Mirae Asset</div><div class="aff-cta">Open Free Account →</div></a>
-      <a class="aff-card" href="https://paytmmoney.com/refer" target="_blank" rel="noopener sponsored"><div class="aff-name">Paytm Money</div><div class="aff-tag">₹0 commission · UPI</div><div class="aff-cta">Get Started →</div></a>
+      <a class="aff-card" href="https://groww.in" target="_blank" rel="noopener sponsored"><div class="aff-name">Groww</div><div class="aff-tag">50M+ users · Zero commission</div><div class="aff-cta">Open Free Account →</div></a>
+      <a class="aff-card" href="https://zerodha.com" target="_blank" rel="noopener sponsored"><div class="aff-name">Zerodha Coin</div><div class="aff-tag">Direct MF · No fees</div><div class="aff-cta">Start Investing →</div></a>
+      <a class="aff-card" href="https://kuvera.in" target="_blank" rel="noopener sponsored"><div class="aff-name">Kuvera</div><div class="aff-tag">Goal-based · Free</div><div class="aff-cta">Explore Kuvera →</div></a>
+      <a class="aff-card" href="https://paytmmoney.com" target="_blank" rel="noopener sponsored"><div class="aff-name">Paytm Money</div><div class="aff-tag">₹0 commission · UPI</div><div class="aff-cta">Get Started →</div></a>
     </div>
     <p class="aff-disc">⚠️ Affiliate disclosure: We may receive compensation when you open an account via these links. This does not influence our calculator results. Mutual fund investments are subject to market risk.</p>
   </div>
@@ -335,7 +318,7 @@ footer strong{color:#94A3B8}
 
   <div class="g2">
     <div class="card">
-      <div class="card-title"><span class="ico ico-b">&#x1F3E0;</span> Loan Details</div>
+      <div class="card-title"><span class="ico ico-b">🏠</span> Loan Details</div>
       <div class="fields">
         <div class="field">
           <label>Loan Amount</label>
@@ -355,7 +338,7 @@ footer strong{color:#94A3B8}
       </div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="ico ico-a">&#x1F4A1;</span> Prepayment (Optional)</div>
+      <div class="card-title"><span class="ico ico-a">💡</span> Prepayment (Optional)</div>
       <div class="fields">
         <div class="field">
           <label>Extra Monthly Payment (₹)</label>
@@ -367,7 +350,7 @@ footer strong{color:#94A3B8}
           <div class="input-row"><input type="number" id="e-fee" value="0.5" min="0" max="5" step="0.1"><span class="suf">%</span></div>
         </div>
         <div class="banner" style="margin:0">
-          <span class="bi">&#x1F4A1;</span>
+          <span class="bi">💡</span>
           <div class="bt">Add extra monthly payment to see how much <strong>interest and time you save</strong> with prepayment.</div>
         </div>
       </div>
@@ -375,7 +358,7 @@ footer strong{color:#94A3B8}
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="ico ico-r">&#x1F4CA;</span> Loan Summary</div>
+    <div class="card-title"><span class="ico ico-r">📊</span> Loan Summary</div>
     <div class="stats">
       <div class="stat"><div class="stat-lbl">Monthly EMI</div><div class="stat-val" id="e-emi">—</div></div>
       <div class="stat"><div class="stat-lbl">Total Interest</div><div class="stat-val dn" id="e-int">—</div></div>
@@ -384,7 +367,7 @@ footer strong{color:#94A3B8}
     </div>
     <div id="e-prepay" style="display:none">
       <div class="divider"></div>
-      <div class="card-title" style="margin-bottom:12px"><span class="ico ico-g">&#x26A1;</span> Prepayment Savings</div>
+      <div class="card-title" style="margin-bottom:12px"><span class="ico ico-g">⚡</span> Prepayment Savings</div>
       <div class="stats">
         <div class="stat"><div class="stat-lbl">Interest Saved</div><div class="stat-val up" id="e-saved">—</div></div>
         <div class="stat"><div class="stat-lbl">Time Saved</div><div class="stat-val up" id="e-tsaved">—</div></div>
@@ -393,13 +376,13 @@ footer strong{color:#94A3B8}
     </div>
     <div class="chart-wrap mt16"><canvas id="emi-chart"></canvas></div>
     <div class="btns mt16">
-      <button class="btn btn-w" onclick="waShare('emi')">&#x2709; Share on WhatsApp</button>
-      <button class="btn btn-g" onclick="alert('Add jsPDF library to enable PDF download.')">Download PDF</button>
+      <button class="btn btn-w" onclick="waShare('emi')">📲 Share on WhatsApp</button>
+      <button class="btn btn-g" onclick="alert('Add jsPDF library to enable PDF download.')">⬇️ Download PDF</button>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title"><span class="ico ico-b">&#x1F4CB;</span> Amortisation Schedule</div>
+    <div class="card-title"><span class="ico ico-b">📋</span> Amortisation Schedule</div>
     <div class="tbl-wrap"><table>
       <thead><tr><th>Year</th><th>EMI/Month</th><th>Principal Paid</th><th>Interest Paid</th><th>Outstanding</th></tr></thead>
       <tbody id="emi-tbody"></tbody>
@@ -413,7 +396,7 @@ footer strong{color:#94A3B8}
   <p class="sec-sub">Should you invest extra money in SIP or prepay your loan? Compare both scenarios.</p>
   <div class="g2">
     <div class="card">
-      <div class="card-title"><span class="ico ico-b">&#x1F3E0;</span> Your Loan</div>
+      <div class="card-title"><span class="ico ico-b">🏠</span> Your Loan</div>
       <div class="fields">
         <div class="field"><label>Loan Amount</label><div class="input-row"><span class="pre">₹</span><input type="number" id="c-loan" value="5000000"></div></div>
         <div class="field"><label>Loan Interest Rate (%/yr)</label><div class="input-row"><input type="number" id="c-lrate" value="8.5" step="0.1"><span class="suf">%</span></div></div>
@@ -422,17 +405,17 @@ footer strong{color:#94A3B8}
       </div>
     </div>
     <div class="card">
-      <div class="card-title"><span class="ico ico-g">&#x1F4C8;</span> SIP Assumptions</div>
+      <div class="card-title"><span class="ico ico-g">📈</span> SIP Assumptions</div>
       <div class="fields">
         <div class="field"><label>Expected SIP Return (%/yr)</label><div class="input-row"><input type="number" id="c-srate" value="12" step="0.5"><span class="suf">%</span></div></div>
         <div class="field"><label>Investment Period (Years)</label><div class="input-row"><input type="number" id="c-syrs" value="20"><span class="suf">Yrs</span></div></div>
         <div class="field"><label>Inflation Rate (%/yr)</label><div class="input-row"><input type="number" id="c-inf" value="6" step="0.5"><span class="suf">%</span></div></div>
-        <div class="banner" style="margin:0"><span class="bi">&#x2696;&#xFE0F;</span><div class="bt">Scenario A: Prepay loan with ₹X/month. Scenario B: Invest ₹X in SIP instead.</div></div>
+        <div class="banner" style="margin:0"><span class="bi">⚖️</span><div class="bt">Scenario A: Prepay loan with ₹X/month. Scenario B: Invest ₹X in SIP instead.</div></div>
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="card-title"><span class="ico ico-p">&#x1F3C6;</span> Side-by-Side Verdict</div>
+    <div class="card-title"><span class="ico ico-p">🏆</span> Side-by-Side Verdict</div>
     <div class="cmp2 mb18">
       <div class="cwin g"><div class="cwin-lbl">📈 Scenario B — Invest in SIP</div><div class="cwin-val" id="c-sip">—</div><div class="cwin-sub" id="c-sip-sub">Estimated corpus</div></div>
       <div class="cwin b"><div class="cwin-lbl">🏠 Scenario A — Prepay Loan</div><div class="cwin-val" id="c-save">—</div><div class="cwin-sub">Interest saved by prepaying</div></div>
@@ -443,35 +426,24 @@ footer strong{color:#94A3B8}
       <div class="stat"><div class="stat-lbl">Time Saved on Loan</div><div class="stat-val up" id="c-tsave">—</div></div>
       <div class="stat"><div class="stat-lbl">Better Option</div><div class="stat-val" id="c-verdict">—</div></div>
     </div>
-    <div class="banner mt16" id="c-insight" style="display:none"><span class="bi">&#x1F9E0;</span><div class="bt" id="c-insight-txt"></div></div>
+    <div class="banner mt16" id="c-insight" style="display:none"><span class="bi">🧠</span><div class="bt" id="c-insight-txt"></div></div>
   </div>
 </div>
 
 </main>
 
 <footer>
-  <strong>SIPtruth.com</strong> — India's Honest SIP & EMI Calculator<br>
+  <strong>RealReturns.in</strong> — India's Honest SIP & EMI Calculator<br>
   Built for Indian investors who deserve the full picture.<br><br>
   ⚠️ <em>Disclaimer: All calculations are illustrative only. Mutual fund investments are subject to market risks. LTCG tax estimates are approximate — consult a CA for exact liability. Not investment advice. Not SEBI-registered.</em><br><br>
-  Made with ❤️ in India &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="about.html">About Us</a><br><br>
-  <a href="sip-ltcg-calculator.html">SIP LTCG Tax Calculator</a> &nbsp;·&nbsp;
-  <a href="step-up-sip-calculator.html">Step-Up SIP Calculator</a> &nbsp;·&nbsp;
-  <a href="sip-vs-emi-calculator.html">SIP vs EMI Calculator</a>
+  Made with ❤️ in India &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="about.html">About Us</a>
 </footer>
 
 <script>
 // -- HELPERS  --
 function v(id){ return parseFloat(document.getElementById(id).value)||0; }
 function el(id){ return document.getElementById(id); }
-function setText(id,txt){ 
-  var e=el(id); 
-  if(e){ 
-    e.textContent=txt;
-    e.classList.remove('updated');
-    void e.offsetWidth; // trigger reflow
-    e.classList.add('updated');
-  } 
-}
+function setText(id,txt){ var e=el(id); if(e) e.textContent=txt; }
 
 function fmt(n){
   if(isNaN(n)||n===null) return ' ';
@@ -802,9 +774,9 @@ function calcCmp(){
 function waShare(type){
   var msg='';
   if(type==='sip'){
-    msg='  *My SIP Calculation (SIPtruth.com)*\n\nMonthly SIP: '+fmt(v('s-amt'))+'\nReturn: '+v('s-rate')+'% | Years: '+v('s-yrs')+'\nStep-up: '+v('s-step')+'%\n\n  Nominal: '+(el('s-nom').textContent)+'\n   After LTCG Tax: '+(el('s-ptax').textContent)+'\n  Real Value: '+(el('s-real').textContent)+'\n\n_Calculate yours free at SIPtruth.com_';
+    msg='  *My SIP Calculation (RealReturns.in)*\n\nMonthly SIP: '+fmt(v('s-amt'))+'\nReturn: '+v('s-rate')+'% | Years: '+v('s-yrs')+'\nStep-up: '+v('s-step')+'%\n\n  Nominal: '+(el('s-nom').textContent)+'\n   After LTCG Tax: '+(el('s-ptax').textContent)+'\n  Real Value: '+(el('s-real').textContent)+'\n\n_Calculate yours free at RealReturns.in_';
   } else {
-    msg='  *My EMI Calculation (SIPtruth.com)*\n\nLoan: '+fmt(v('e-amt'))+'\nRate: '+v('e-rate')+'% | Tenure: '+v('e-yrs')+' years\n\n  Monthly EMI: '+(el('e-emi').textContent)+'\n  Total Interest: '+(el('e-int').textContent)+'\n  Total Payment: '+(el('e-total').textContent)+'\n\n_Calculate yours free at SIPtruth.com_';
+    msg='  *My EMI Calculation (RealReturns.in)*\n\nLoan: '+fmt(v('e-amt'))+'\nRate: '+v('e-rate')+'% | Tenure: '+v('e-yrs')+' years\n\n  Monthly EMI: '+(el('e-emi').textContent)+'\n  Total Interest: '+(el('e-int').textContent)+'\n  Total Payment: '+(el('e-total').textContent)+'\n\n_Calculate yours free at RealReturns.in_';
   }
   window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
 }
@@ -822,31 +794,10 @@ function init(){
       rto=setTimeout(function(){calcSIP();calcEMI();},250);
     });
   } catch(e) {
-    console.error('SIPtruth init error:', e);
+    console.error('RealReturns init error:', e);
   }
 }
-setTimeout(init, 0);
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "SIPtruth.com",
-  "url": "https://siptruth.com",
-  "description": "India's most honest SIP and EMI calculator. Shows LTCG tax, inflation-adjusted returns, and expense ratio together — free, no login.",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "INR"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "124"
-  }
-}
+setTimeout(init, 1);
 </script>
 </body>
 </html>
